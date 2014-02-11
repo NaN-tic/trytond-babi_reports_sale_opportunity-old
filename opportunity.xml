@@ -148,7 +148,7 @@
         <field name="model" search="[('model','=','sale.opportunity')]"/>
         <field name="filter" ref="all_opportunities"/>
         <field name="name">Opportunities: Year Closed</field>
-        <field name="timeout" eval="60"/>
+        <field name="timeout" eval="1200"/>
     </record>
     <record model="babi.report-res.group"
             id="opportunity_yearclosed_origin_group_babi_">
