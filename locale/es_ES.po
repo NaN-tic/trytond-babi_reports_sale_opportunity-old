@@ -1,0 +1,104 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "model:babi.dimension,name:opportunity_yearclosed_origin__yearclosed"
+msgid "Year Closed"
+msgstr "Año cierre"
+
+msgctxt "model:babi.expression,name:sale_opportunity_city"
+msgid "City"
+msgstr "Ciudad"
+
+msgctxt "model:babi.expression,name:sale_opportunity_country_name"
+msgid "Country"
+msgstr "País"
+
+msgctxt "model:babi.expression,name:sale_opportunity_day_closed"
+msgid "Day End Date"
+msgstr "Día fecha fin"
+
+msgctxt "model:babi.expression,name:sale_opportunity_id"
+msgid "ID"
+msgstr "Identificador"
+
+msgctxt "model:babi.expression,name:sale_opportunity_month_closed"
+msgid "Month End Date"
+msgstr "Mes fecha fin"
+
+msgctxt "model:babi.expression,name:sale_opportunity_name"
+msgid "Name"
+msgstr "Nombre"
+
+msgctxt "model:babi.expression,name:sale_opportunity_planned_revenue"
+msgid "Estimated Revenue"
+msgstr "Importe estimado"
+
+msgctxt "model:babi.expression,name:sale_opportunity_probability"
+msgid "Probability"
+msgstr "Probabilidad"
+
+msgctxt "model:babi.expression,name:sale_opportunity_state_name"
+msgid "State/Region"
+msgstr "Estado/Región"
+
+msgctxt "model:babi.expression,name:sale_opportunity_user"
+msgid "Employee"
+msgstr "Empleado"
+
+msgctxt "model:babi.expression,name:sale_opportunity_week_closed"
+msgid "Week End Date"
+msgstr "Semana fin fecha"
+
+msgctxt "model:babi.expression,name:sale_opportunity_year_closed"
+msgid "Year End Date"
+msgstr "Año fecha fin"
+
+msgctxt "model:babi.expression,name:sale_opportunity_yearmonth_closed"
+msgid "Year-Month End Date"
+msgstr "Año-Mes fecha fin"
+
+msgctxt "model:babi.expression,name:sale_opportunity_yearmonthday_closed"
+msgid "Date End Date"
+msgstr "Fecha fin"
+
+msgctxt "model:babi.expression,name:sale_opportunity_zip"
+msgid "Zip"
+msgstr "Código postal"
+
+msgctxt "model:babi.filter,name:all_leads"
+msgid "Leads"
+msgstr "Iniciativas"
+
+msgctxt "model:babi.filter,name:all_opportunities"
+msgid "All Opportunities"
+msgstr "Todas las oportunidades"
+
+msgctxt "model:babi.filter,name:cancel_opportunities"
+msgid "Cancelled Opportunities"
+msgstr "Oportunidades canceladas"
+
+msgctxt "model:babi.filter,name:converted_opportunities"
+msgid "Converted Opportunities"
+msgstr "Oportunidades convertidas"
+
+msgctxt "model:babi.filter,name:lost_opportunities"
+msgid "Lost Opportunities"
+msgstr "Oportunidades perdidas"
+
+msgctxt "model:babi.filter,name:open_opportunities"
+msgid "Open Opportunities"
+msgstr "Oportunidades abiertas"
+
+msgctxt "model:babi.measure,name:opportunity_yearclosed_origin_"
+msgid "Opportunities"
+msgstr "Oportunidades"
+
+msgctxt ""
+"model:babi.measure,name:opportunity_yearclosed_origin__planned_revenue"
+msgid "Excpected Revenue"
+msgstr "Importe previsto"
+
+msgctxt "model:babi.report,name:opportunity_yearclosed_origin"
+msgid "Opportunities: Year Closed"
+msgstr "Oportunidades: Año Cerrado"

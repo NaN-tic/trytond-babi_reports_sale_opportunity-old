@@ -1,0 +1,104 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "model:babi.dimension,name:opportunity_yearclosed_origin__yearclosed"
+msgid "Year Closed"
+msgstr "Any tancament"
+
+msgctxt "model:babi.expression,name:sale_opportunity_city"
+msgid "City"
+msgstr "Ciutat"
+
+msgctxt "model:babi.expression,name:sale_opportunity_country_name"
+msgid "Country"
+msgstr "País"
+
+msgctxt "model:babi.expression,name:sale_opportunity_day_closed"
+msgid "Day End Date"
+msgstr "Dia data fi"
+
+msgctxt "model:babi.expression,name:sale_opportunity_id"
+msgid "ID"
+msgstr "Identificador"
+
+msgctxt "model:babi.expression,name:sale_opportunity_month_closed"
+msgid "Month End Date"
+msgstr "Mes data final"
+
+msgctxt "model:babi.expression,name:sale_opportunity_name"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "model:babi.expression,name:sale_opportunity_planned_revenue"
+msgid "Estimated Revenue"
+msgstr "Import estimat"
+
+msgctxt "model:babi.expression,name:sale_opportunity_probability"
+msgid "Probability"
+msgstr "Probabilitat"
+
+msgctxt "model:babi.expression,name:sale_opportunity_state_name"
+msgid "State/Region"
+msgstr "Estat/Regió"
+
+msgctxt "model:babi.expression,name:sale_opportunity_user"
+msgid "Employee"
+msgstr "Empleat"
+
+msgctxt "model:babi.expression,name:sale_opportunity_week_closed"
+msgid "Week End Date"
+msgstr "Setmana data finalització"
+
+msgctxt "model:babi.expression,name:sale_opportunity_year_closed"
+msgid "Year End Date"
+msgstr "Any data fi"
+
+msgctxt "model:babi.expression,name:sale_opportunity_yearmonth_closed"
+msgid "Year-Month End Date"
+msgstr "Any Mes Data fi"
+
+msgctxt "model:babi.expression,name:sale_opportunity_yearmonthday_closed"
+msgid "Date End Date"
+msgstr "Data fi"
+
+msgctxt "model:babi.expression,name:sale_opportunity_zip"
+msgid "Zip"
+msgstr "Codi postal"
+
+msgctxt "model:babi.filter,name:all_leads"
+msgid "Leads"
+msgstr "Iniciatives"
+
+msgctxt "model:babi.filter,name:all_opportunities"
+msgid "All Opportunities"
+msgstr "Totes les oportunitats"
+
+msgctxt "model:babi.filter,name:cancel_opportunities"
+msgid "Cancelled Opportunities"
+msgstr "Oportunitats cancel·lades"
+
+msgctxt "model:babi.filter,name:converted_opportunities"
+msgid "Converted Opportunities"
+msgstr "Oportunitats convertides"
+
+msgctxt "model:babi.filter,name:lost_opportunities"
+msgid "Lost Opportunities"
+msgstr "Oportunitats perdudes"
+
+msgctxt "model:babi.filter,name:open_opportunities"
+msgid "Open Opportunities"
+msgstr "Oportunitats obertes"
+
+msgctxt "model:babi.measure,name:opportunity_yearclosed_origin_"
+msgid "Opportunities"
+msgstr "Oportunitats"
+
+msgctxt ""
+"model:babi.measure,name:opportunity_yearclosed_origin__planned_revenue"
+msgid "Excpected Revenue"
+msgstr "Import previst"
+
+msgctxt "model:babi.report,name:opportunity_yearclosed_origin"
+msgid "Opportunities: Year Closed"
+msgstr "Oportunitats: Any tancat"
