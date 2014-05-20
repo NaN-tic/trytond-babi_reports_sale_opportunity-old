@@ -57,6 +57,42 @@
         <field name="expression">o.rec_name</field>
         <field name="name">Name</field>
     </record>
+    <record model="babi.expression" id="sale_opportunity_year_opened">
+        <field name="ttype">char</field>
+        <field name="model" search="[('model','=','sale.opportunity')]"/>
+        <field name="expression">y(o.start_date)</field>
+        <field name="name">Year Start Date</field>
+    </record>
+    <record model="babi.expression" id="sale_opportunity_month_opened">
+        <field name="ttype">char</field>
+        <field name="model" search="[('model','=','sale.opportunity')]"/>
+        <field name="expression">m(o.start_date)</field>
+        <field name="name">Month Start Date</field>
+    </record>
+    <record model="babi.expression" id="sale_opportunity_day_opened">
+        <field name="ttype">char</field>
+        <field name="model" search="[('model','=','sale.opportunity')]"/>
+        <field name="expression">d(o.start_date)</field>
+        <field name="name">Day Start Date</field>
+    </record>
+    <record model="babi.expression" id="sale_opportunity_week_opened">
+        <field name="ttype">char</field>
+        <field name="model" search="[('model','=','sale.opportunity')]"/>
+        <field name="expression">w(o.start_date)</field>
+        <field name="name">Week Start Date</field>
+    </record>
+    <record model="babi.expression" id="sale_opportunity_yearmonth_opened">
+        <field name="ttype">char</field>
+        <field name="model" search="[('model','=','sale.opportunity')]"/>
+        <field name="expression">ym(o.start_date)</field>
+        <field name="name">Year-Month Start Date</field>
+    </record>
+    <record model="babi.expression" id="sale_opportunity_yearmonthday_opened">
+        <field name="ttype">char</field>
+        <field name="model" search="[('model','=','sale.opportunity')]"/>
+        <field name="expression">ymd(o.start_date)</field>
+        <field name="name">Date Start Date</field>
+    </record>
     <record model="babi.expression" id="sale_opportunity_year_closed">
         <field name="ttype">char</field>
         <field name="model" search="[('model','=','sale.opportunity')]"/>
