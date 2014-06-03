@@ -1,217 +1,211 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+     copyright notices and license terms. -->
 <tryton>
-<data noupdate="0">
+    <data noupdate="0">
+        <!-- Filters -->
+        <!-- Opportunities -->
+        <record model="babi.filter" id="all_opportunities">
+            <field name="name">All Opportunities</field>
+            <field name="model" search="[('model', '=', 'sale.opportunity')]"/>
+            <field name="domain">[('state', '!=', ['lead'])]</field>
+        </record>
+        <record model="babi.filter" id="open_opportunities">
+            <field name="name">Open Opportunities</field>
+            <field name="model" search="[('model', '=', 'sale.opportunity')]"/>
+            <field name="domain">[('state', '=', 'opportunity')]</field>
+        </record>
+        <record model="babi.filter" id="cancel_opportunities">
+            <field name="name">Cancelled Opportunities</field>
+            <field name="model" search="[('model', '=', 'sale.opportunity')]"/>
+            <field name="domain">[('state', '=', 'canceled')]</field>
+        </record>
+        <record model="babi.filter" id="lost_opportunities">
+            <field name="name">Lost Opportunities</field>
+            <field name="model" search="[('model', '=', 'sale.opportunity')]"/>
+            <field name="domain">[('state', '=', 'lost')]</field>
+        </record>
+        <record model="babi.filter" id="converted_opportunities">
+            <field name="name">Converted Opportunities</field>
+            <field name="model" search="[('model', '=', 'sale.opportunity')]"/>
+            <field name="domain">[('state', '=', 'converted')]</field>
+        </record>
 
-    <!-- Filters -->
+        <!-- Leads -->
+        <record model="babi.filter" id="all_leads">
+            <field name="name">Leads</field>
+            <field name="model" search="[('model', '=', 'sale.opportunity')]"/>
+            <field name="domain">[('state', '=', 'lead')]</field>
+        </record>
 
-    <!-- Opportunities -->
-    <record model="babi.filter" id="all_opportunities">
-        <field name="name">All Opportunities</field>
-        <field name="model" search="[('model', '=', 'sale.opportunity')]"/>
-        <field name="domain">[('state', '!=', ['lead'])]</field>
-    </record>
-    <record model="babi.filter" id="open_opportunities">
-        <field name="name">Open Opportunities</field>
-        <field name="model" search="[('model', '=', 'sale.opportunity')]"/>
-        <field name="domain">[('state', '=', 'opportunity')]</field>
-    </record>
-    <record model="babi.filter" id="cancel_opportunities">
-        <field name="name">Cancelled Opportunities</field>
-        <field name="model" search="[('model', '=', 'sale.opportunity')]"/>
-        <field name="domain">[('state', '=', 'canceled')]</field>
-    </record>
-    <record model="babi.filter" id="lost_opportunities">
-        <field name="name">Lost Opportunities</field>
-        <field name="model" search="[('model', '=', 'sale.opportunity')]"/>
-        <field name="domain">[('state', '=', 'lost')]</field>
-    </record>
-    <record model="babi.filter" id="converted_opportunities">
-        <field name="name">Converted Opportunities</field>
-        <field name="model" search="[('model', '=', 'sale.opportunity')]"/>
-        <field name="domain">[('state', '=', 'converted')]</field>
-    </record>
+        <!--
+            Expressions
+        -->
+        <!-- sale.opportunity -->
+        <record model="babi.expression" id="sale_opportunity_id">
+            <field name="ttype">float</field>
+            <field name="model" search="[('model','=','sale.opportunity')]"/>
+            <field name="expression">o.id</field>
+            <field name="name">ID</field>
+        </record>
+        <record model="babi.expression" id="sale_opportunity_name">
+            <field name="ttype">char</field>
+            <field name="model" search="[('model','=','sale.opportunity')]"/>
+            <field name="expression">o.rec_name</field>
+            <field name="name">Name</field>
+        </record>
+        <record model="babi.expression" id="sale_opportunity_year_opened">
+            <field name="ttype">char</field>
+            <field name="model" search="[('model','=','sale.opportunity')]"/>
+            <field name="expression">y(o.start_date)</field>
+            <field name="name">Year Start Date</field>
+        </record>
+        <record model="babi.expression" id="sale_opportunity_month_opened">
+            <field name="ttype">char</field>
+            <field name="model" search="[('model','=','sale.opportunity')]"/>
+            <field name="expression">m(o.start_date)</field>
+            <field name="name">Month Start Date</field>
+        </record>
+        <record model="babi.expression" id="sale_opportunity_day_opened">
+            <field name="ttype">char</field>
+            <field name="model" search="[('model','=','sale.opportunity')]"/>
+            <field name="expression">d(o.start_date)</field>
+            <field name="name">Day Start Date</field>
+        </record>
+        <record model="babi.expression" id="sale_opportunity_week_opened">
+            <field name="ttype">char</field>
+            <field name="model" search="[('model','=','sale.opportunity')]"/>
+            <field name="expression">w(o.start_date)</field>
+            <field name="name">Week Start Date</field>
+        </record>
+        <record model="babi.expression" id="sale_opportunity_yearmonth_opened">
+            <field name="ttype">char</field>
+            <field name="model" search="[('model','=','sale.opportunity')]"/>
+            <field name="expression">ym(o.start_date)</field>
+            <field name="name">Year-Month Start Date</field>
+        </record>
+        <record model="babi.expression" id="sale_opportunity_yearmonthday_opened">
+            <field name="ttype">char</field>
+            <field name="model" search="[('model','=','sale.opportunity')]"/>
+            <field name="expression">ymd(o.start_date)</field>
+            <field name="name">Date Start Date</field>
+        </record>
+        <record model="babi.expression" id="sale_opportunity_year_closed">
+            <field name="ttype">char</field>
+            <field name="model" search="[('model','=','sale.opportunity')]"/>
+            <field name="expression">y(o.end_date)</field>
+            <field name="name">Year End Date</field>
+        </record>
+        <record model="babi.expression" id="sale_opportunity_month_closed">
+            <field name="ttype">char</field>
+            <field name="model" search="[('model','=','sale.opportunity')]"/>
+            <field name="expression">m(o.end_date)</field>
+            <field name="name">Month End Date</field>
+        </record>
+        <record model="babi.expression" id="sale_opportunity_day_closed">
+            <field name="ttype">char</field>
+            <field name="model" search="[('model','=','sale.opportunity')]"/>
+            <field name="expression">d(o.end_date)</field>
+            <field name="name">Day End Date</field>
+        </record>
+        <record model="babi.expression" id="sale_opportunity_week_closed">
+            <field name="ttype">char</field>
+            <field name="model" search="[('model','=','sale.opportunity')]"/>
+            <field name="expression">w(o.end_date)</field>
+            <field name="name">Week End Date</field>
+        </record>
+        <record model="babi.expression" id="sale_opportunity_yearmonth_closed">
+            <field name="ttype">char</field>
+            <field name="model" search="[('model','=','sale.opportunity')]"/>
+            <field name="expression">ym(o.end_date)</field>
+            <field name="name">Year-Month End Date</field>
+        </record>
+        <record model="babi.expression" id="sale_opportunity_yearmonthday_closed">
+            <field name="ttype">char</field>
+            <field name="model" search="[('model','=','sale.opportunity')]"/>
+            <field name="expression">ymd(o.end_date)</field>
+            <field name="name">Date End Date</field>
+        </record>
+        <record model="babi.expression" id="sale_opportunity_probability">
+            <field name="ttype">float</field>
+            <field name="model" search="[('model','=','sale.opportunity')]"/>
+            <field name="expression">o.probability</field>
+            <field name="name">Probability</field>
+        </record>
+        <record model="babi.expression" id="sale_opportunity_planned_revenue">
+            <field name="ttype">float</field>
+            <field name="model" search="[('model','=','sale.opportunity')]"/>
+            <field name="expression">o.expected_amount</field>
+            <field name="name">Estimated Revenue</field>
+        </record>
+        <record model="babi.expression" id="sale_opportunity_user">
+            <field name="ttype">char</field>
+            <field name="model" search="[('model','=','sale.opportunity')]"/>
+            <field name="expression">o.employee.rec_name</field>
+            <field name="name">Employee</field>
+        </record>
+        <record model="babi.expression" id="sale_opportunity_city">
+            <field name="ttype">char</field>
+            <field name="model" search="[('model','=','sale.opportunity')]"/>
+            <field name="expression">o.party and o.party.addresses[0].city</field>
+            <field name="name">City</field>
+        </record>
+        <record model="babi.expression" id="sale_opportunity_zip">
+            <field name="ttype">char</field>
+            <field name="model" search="[('model','=','sale.opportunity')]"/>
+            <field name="expression">o.party and o.party.addresses[0].zip</field>
+            <field name="name">Zip</field>
+        </record>
+        <record model="babi.expression" id="sale_opportunity_state_name">
+            <field name="ttype">char</field>
+            <field name="model" search="[('model','=','sale.opportunity')]"/>
+            <field name="expression">o.party and o.party.addresses[0].subdivision.rec_name</field>
+            <field name="name">State/Region</field>
+        </record>
+        <record model="babi.expression" id="sale_opportunity_country_name">
+            <field name="ttype">char</field>
+            <field name="model" search="[('model','=','sale.opportunity')]"/>
+            <field name="expression">o.party and o.party.addresses[0].country.rec_name</field>
+            <field name="name">Country</field>
+        </record>
 
-    <!-- Leads -->
-    <record model="babi.filter" id="all_leads">
-        <field name="name">Leads</field>
-        <field name="model" search="[('model', '=', 'sale.opportunity')]"/>
-        <field name="domain">[('state', '=', 'lead')]</field>
-    </record>
-
-    <!--
-         Expressions
-    -->
-
-
-
-    <!-- sale.opportunity -->
-    <record model="babi.expression" id="sale_opportunity_id">
-        <field name="ttype">float</field>
-        <field name="model" search="[('model','=','sale.opportunity')]"/>
-        <field name="expression">o.id</field>
-        <field name="name">ID</field>
-    </record>
-    <record model="babi.expression" id="sale_opportunity_name">
-        <field name="ttype">char</field>
-        <field name="model" search="[('model','=','sale.opportunity')]"/>
-        <field name="expression">o.rec_name</field>
-        <field name="name">Name</field>
-    </record>
-    <record model="babi.expression" id="sale_opportunity_year_opened">
-        <field name="ttype">char</field>
-        <field name="model" search="[('model','=','sale.opportunity')]"/>
-        <field name="expression">y(o.start_date)</field>
-        <field name="name">Year Start Date</field>
-    </record>
-    <record model="babi.expression" id="sale_opportunity_month_opened">
-        <field name="ttype">char</field>
-        <field name="model" search="[('model','=','sale.opportunity')]"/>
-        <field name="expression">m(o.start_date)</field>
-        <field name="name">Month Start Date</field>
-    </record>
-    <record model="babi.expression" id="sale_opportunity_day_opened">
-        <field name="ttype">char</field>
-        <field name="model" search="[('model','=','sale.opportunity')]"/>
-        <field name="expression">d(o.start_date)</field>
-        <field name="name">Day Start Date</field>
-    </record>
-    <record model="babi.expression" id="sale_opportunity_week_opened">
-        <field name="ttype">char</field>
-        <field name="model" search="[('model','=','sale.opportunity')]"/>
-        <field name="expression">w(o.start_date)</field>
-        <field name="name">Week Start Date</field>
-    </record>
-    <record model="babi.expression" id="sale_opportunity_yearmonth_opened">
-        <field name="ttype">char</field>
-        <field name="model" search="[('model','=','sale.opportunity')]"/>
-        <field name="expression">ym(o.start_date)</field>
-        <field name="name">Year-Month Start Date</field>
-    </record>
-    <record model="babi.expression" id="sale_opportunity_yearmonthday_opened">
-        <field name="ttype">char</field>
-        <field name="model" search="[('model','=','sale.opportunity')]"/>
-        <field name="expression">ymd(o.start_date)</field>
-        <field name="name">Date Start Date</field>
-    </record>
-    <record model="babi.expression" id="sale_opportunity_year_closed">
-        <field name="ttype">char</field>
-        <field name="model" search="[('model','=','sale.opportunity')]"/>
-        <field name="expression">y(o.end_date)</field>
-        <field name="name">Year End Date</field>
-    </record>
-    <record model="babi.expression" id="sale_opportunity_month_closed">
-        <field name="ttype">char</field>
-        <field name="model" search="[('model','=','sale.opportunity')]"/>
-        <field name="expression">m(o.end_date)</field>
-        <field name="name">Month End Date</field>
-    </record>
-    <record model="babi.expression" id="sale_opportunity_day_closed">
-        <field name="ttype">char</field>
-        <field name="model" search="[('model','=','sale.opportunity')]"/>
-        <field name="expression">d(o.end_date)</field>
-        <field name="name">Day End Date</field>
-    </record>
-    <record model="babi.expression" id="sale_opportunity_week_closed">
-        <field name="ttype">char</field>
-        <field name="model" search="[('model','=','sale.opportunity')]"/>
-        <field name="expression">w(o.end_date)</field>
-        <field name="name">Week End Date</field>
-    </record>
-    <record model="babi.expression" id="sale_opportunity_yearmonth_closed">
-        <field name="ttype">char</field>
-        <field name="model" search="[('model','=','sale.opportunity')]"/>
-        <field name="expression">ym(o.end_date)</field>
-        <field name="name">Year-Month End Date</field>
-    </record>
-    <record model="babi.expression" id="sale_opportunity_yearmonthday_closed">
-        <field name="ttype">char</field>
-        <field name="model" search="[('model','=','sale.opportunity')]"/>
-        <field name="expression">ymd(o.end_date)</field>
-        <field name="name">Date End Date</field>
-    </record>
-    <record model="babi.expression" id="sale_opportunity_probability">
-        <field name="ttype">float</field>
-        <field name="model" search="[('model','=','sale.opportunity')]"/>
-        <field name="expression">o.probability</field>
-        <field name="name">Probability</field>
-    </record>
-    <record model="babi.expression" id="sale_opportunity_planned_revenue">
-        <field name="ttype">float</field>
-        <field name="model" search="[('model','=','sale.opportunity')]"/>
-        <field name="expression">o.expected_amount</field>
-        <field name="name">Estimated Revenue</field>
-    </record>
-    <record model="babi.expression" id="sale_opportunity_user">
-        <field name="ttype">char</field>
-        <field name="model" search="[('model','=','sale.opportunity')]"/>
-        <field name="expression">o.employee.rec_name</field>
-        <field name="name">Employee</field>
-    </record>
-    <record model="babi.expression" id="sale_opportunity_city">
-        <field name="ttype">char</field>
-        <field name="model" search="[('model','=','sale.opportunity')]"/>
-        <field name="expression">o.party and o.party.addresses[0].city</field>
-        <field name="name">City</field>
-    </record>
-    <record model="babi.expression" id="sale_opportunity_zip">
-        <field name="ttype">char</field>
-        <field name="model" search="[('model','=','sale.opportunity')]"/>
-        <field name="expression">o.party and o.party.addresses[0].zip</field>
-        <field name="name">Zip</field>
-    </record>
-    <record model="babi.expression" id="sale_opportunity_state_name">
-        <field name="ttype">char</field>
-        <field name="model" search="[('model','=','sale.opportunity')]"/>
-        <field name="expression">o.party and o.party.addresses[0].subdivision.rec_name</field>
-        <field name="name">State/Region</field>
-    </record>
-    <record model="babi.expression" id="sale_opportunity_country_name">
-        <field name="ttype">char</field>
-        <field name="model" search="[('model','=','sale.opportunity')]"/>
-        <field name="expression">o.party and o.party.addresses[0].country.rec_name</field>
-        <field name="name">Country</field>
-    </record>
-
-    <!--
-         Reports
-    -->
-
-    <!-- sale.opportunity -->
-
-    <!-- Year Closed - Origin | Count -->
-    <record model="babi.report" id="opportunity_yearclosed_origin">
-        <field name="parent_menu" ref="babi.menu_babi"/>
-        <field name="model" search="[('model','=','sale.opportunity')]"/>
-        <field name="filter" ref="all_opportunities"/>
-        <field name="name">Opportunities: Year Closed</field>
-        <field name="timeout" eval="1200"/>
-    </record>
-    <record model="babi.report-res.group"
-            id="opportunity_yearclosed_origin_group_babi_">
-        <field name="report" ref="opportunity_yearclosed_origin"/>
-        <field name="group" ref="babi.group_babi"/>
-    </record>
-    <record model="babi.dimension" id="opportunity_yearclosed_origin__yearclosed">
-        <field name="report" ref="opportunity_yearclosed_origin"/>
-        <field name="expression" ref="sale_opportunity_year_closed"/>
-        <field name="name">Year Closed</field>
-        <field name="sequence">1</field>
-    </record>
-    <record model="babi.measure" id="opportunity_yearclosed_origin_">
-        <field name="report" ref="opportunity_yearclosed_origin"/>
-        <field name="expression" ref="sale_opportunity_id"/>
-        <field name="name">Opportunities</field>
-        <field name="aggregate">count</field>
-        <field name="sequence">1</field>
-    </record>
-    <record model="babi.measure" id="opportunity_yearclosed_origin__planned_revenue">
-        <field name="report" ref="opportunity_yearclosed_origin"/>
-        <field name="expression" ref="sale_opportunity_planned_revenue"/>
-        <field name="name">Excpected Revenue</field>
-        <field name="aggregate">sum</field>
-        <field name="sequence">2</field>
-    </record>
-
-</data>
+        <!--
+            Reports
+        -->
+        <!-- sale.opportunity -->
+        <!-- Year Closed - Origin | Count -->
+        <record model="babi.report" id="opportunity_yearclosed_origin">
+            <field name="parent_menu" ref="babi.menu_babi"/>
+            <field name="model" search="[('model','=','sale.opportunity')]"/>
+            <field name="filter" ref="all_opportunities"/>
+            <field name="name">Opportunities: Year Closed</field>
+            <field name="timeout" eval="1200"/>
+        </record>
+        <record model="babi.report-res.group"
+                id="opportunity_yearclosed_origin_group_babi_">
+            <field name="report" ref="opportunity_yearclosed_origin"/>
+            <field name="group" ref="babi.group_babi"/>
+        </record>
+        <record model="babi.dimension" id="opportunity_yearclosed_origin__yearclosed">
+            <field name="report" ref="opportunity_yearclosed_origin"/>
+            <field name="expression" ref="sale_opportunity_year_closed"/>
+            <field name="name">Year Closed</field>
+            <field name="sequence">1</field>
+        </record>
+        <record model="babi.measure" id="opportunity_yearclosed_origin_">
+            <field name="report" ref="opportunity_yearclosed_origin"/>
+            <field name="expression" ref="sale_opportunity_id"/>
+            <field name="name">Opportunities</field>
+            <field name="aggregate">count</field>
+            <field name="sequence">1</field>
+        </record>
+        <record model="babi.measure" id="opportunity_yearclosed_origin__planned_revenue">
+            <field name="report" ref="opportunity_yearclosed_origin"/>
+            <field name="expression" ref="sale_opportunity_planned_revenue"/>
+            <field name="name">Excpected Revenue</field>
+            <field name="aggregate">sum</field>
+            <field name="sequence">2</field>
+        </record>
+    </data>
 </tryton>
 
