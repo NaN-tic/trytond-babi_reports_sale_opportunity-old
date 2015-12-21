@@ -8,46 +8,34 @@
         <record model="babi.filter" id="all_opportunities">
             <field name="name">All Opportunities</field>
             <field name="model" search="[('model', '=', 'sale.opportunity')]"/>
-            <field name="domain"
-                eval="[('state', '!=', ['lead'])]"
-                pyson="1"/>
+            <field name="domain">[('state', '!=', ['lead'])]</field>
         </record>
         <record model="babi.filter" id="open_opportunities">
             <field name="name">Open Opportunities</field>
             <field name="model" search="[('model', '=', 'sale.opportunity')]"/>
-            <field name="domain"
-                eval="[('state', '=', 'opportunity')]"
-                pyson="1"/>
+            <field name="domain">[('state', '=', 'opportunity')]</field>
         </record>
         <record model="babi.filter" id="cancel_opportunities">
             <field name="name">Cancelled Opportunities</field>
             <field name="model" search="[('model', '=', 'sale.opportunity')]"/>
-            <field name="domain"
-                eval="[('state', '=', 'canceled')]"
-                pyson="1"/>
+            <field name="domain">[('state', '=', 'canceled')]</field>
         </record>
         <record model="babi.filter" id="lost_opportunities">
             <field name="name">Lost Opportunities</field>
             <field name="model" search="[('model', '=', 'sale.opportunity')]"/>
-            <field name="domain"
-                eval="[('state', '=', 'lost')]"
-                pyson="1"/>
+            <field name="domain">[('state', '=', 'lost')]</field>
         </record>
         <record model="babi.filter" id="converted_opportunities">
             <field name="name">Converted Opportunities</field>
             <field name="model" search="[('model', '=', 'sale.opportunity')]"/>
-            <field name="domain"
-                eval="[('state', '=', 'converted')]"
-                pyson="1"/>
+            <field name="domain">[('state', '=', 'converted')]</field>
         </record>
 
         <!-- Leads -->
         <record model="babi.filter" id="all_leads">
             <field name="name">Leads</field>
             <field name="model" search="[('model', '=', 'sale.opportunity')]"/>
-            <field name="domain"
-                eval="[('state', '=', 'lead')]"
-                pyson="1"/>
+            <field name="domain">[('state', '=', 'lead')]</field>
         </record>
 
         <!--
